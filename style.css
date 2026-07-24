@@ -1097,3 +1097,20 @@ HADIAH
     }
 
 }
+.family-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    font-size:22px;
+    font-weight:600;
+
+    color:#7B5B3A;
+}
+
+.family-title img{
+    width:22px;
+    height:22px;
+    object-fit:contain;
+}
