@@ -282,15 +282,25 @@ h2{
 }
 
 .bismillah{
-    font-family: "Rakkas", serif;
-    
-    font-size: 60px;
-    
-    color:#000;
-    
+
     text-align:center;
-    
-    line-height:1.2;
+
+    margin-bottom:25px;
+
+}
+
+.bismillah img{
+
+    width:360px;
+
+    max-width:90%;
+
+    height:auto;
+
+    display:block;
+
+    margin:auto;
+
 }
 
 .salam{
