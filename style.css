@@ -282,25 +282,16 @@ h2{
 }
 
 .bismillah{
-
     text-align:center;
-
     margin-bottom:25px;
-
 }
 
 .bismillah img{
-
     width:360px;
-
     max-width:90%;
-
     height:auto;
-
     display:block;
-
-    margin:auto;
-
+    margin:0 auto;
 }
 
 .salam{
