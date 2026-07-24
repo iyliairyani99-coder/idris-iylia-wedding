@@ -1,3 +1,5 @@
+alert("FIREBASE BARU BERJALAN");
+
 // Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
 
@@ -5,7 +7,9 @@ import {
     getDatabase,
     ref,
     push,
-    onValue
+    onValue,
+    get,
+    update
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
 
 
@@ -35,7 +39,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
-
+alert("firebase.js versi baru sedang digunakan");
 
 
 // =========================
@@ -51,30 +55,105 @@ const wishContainer = document.getElementById("wishContainer");
 const totalAttendance = document.getElementById("totalAttendance");
 
 
-form.addEventListener("submit",function(e){
+form.addEventListener("submit", async function(e){
 
     e.preventDefault();
 
-    const data={
+    const attendance =
+        document.querySelector('input[name="attendance"]:checked');
 
-        nama:document.getElementById("guestName").value,
+    if(!attendance){
 
-        phone:document.getElementById("guestPhone").value,
+        alert("Sila pilih status kehadiran.");
 
-        pax:parseInt(document.getElementById("guestPax").value),
+        return;
 
-        status:document.querySelector('input[name="attendance"]:checked').value,
+    }
 
-        wish:document.getElementById("guestWish").value,
+    const phoneInput =
+        document.getElementById("guestPhone").value.trim();
 
-        time:Date.now()
+    const phoneBersih =
+        phoneInput.replace(/[^0-9]/g, "");
+
+    const data = {
+
+        nama:
+            document.getElementById("guestName").value.trim(),
+
+        phone: phoneInput,
+
+        pax:
+            parseInt(document.getElementById("guestPax").value) || 1,
+
+        status:
+            attendance.value,
+
+        wish:
+            document.getElementById("guestWish").value.trim(),
+
+        time:
+            Date.now()
 
     };
 
+    try{
 
-    push(ref(db,"rsvp"),data);
+        const snapshot = await get(ref(db, "rsvp"));
 
-    form.reset();
+        let existingKey = "";
+
+        if(snapshot.exists()){
+
+            snapshot.forEach((child)=>{
+
+                const item = child.val();
+
+                const nomborDalamFirebase =
+                    String(item.phone || "")
+                    .replace(/[^0-9]/g, "");
+
+                if(nomborDalamFirebase === phoneBersih){
+
+                    existingKey = child.key;
+
+                }
+
+            });
+
+        }
+
+        if(existingKey !== ""){
+
+            await update(
+                ref(db, "rsvp/" + existingKey),
+                data
+            );
+
+            alert("Anda telah mengemaskini RSVP anda.");
+
+        }else{
+
+            await push(
+                ref(db, "rsvp"),
+                data
+            );
+
+            alert("Terima kasih! RSVP anda berjaya dihantar.");
+
+        }
+
+        form.reset();
+
+        document.getElementById("guestPax").value = 1;
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("Berlaku ralat. RSVP tidak berjaya dihantar.");
+
+    }
 
 });
 
@@ -109,15 +188,13 @@ onValue(ref(db,"rsvp"),(snapshot)=>{
 
         card.innerHTML=`
 
-            <strong>${item.nama}</strong><br>
+            <div class="wish-name">
+                🌸 <strong>${item.nama}</strong>
+            </div>
 
-            📞 ${item.phone}<br>
-
-            👥 ${item.pax} Pax<br>
-
-            <small>${item.status}</small>
-
-            <p>${item.wish}</p>
+            <div class="wish-text">
+                "${item.wish}"
+            </div>
 
         `;
 
