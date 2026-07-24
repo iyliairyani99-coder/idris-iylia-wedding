@@ -292,6 +292,7 @@ h2{
     height:auto;
     display:block;
     margin:0 auto;
+    object-fit:contain;
 }
 
 .salam{
