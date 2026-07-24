@@ -106,6 +106,8 @@ form.addEventListener("submit", async function(e){
 
                 const item = child.val();
 
+                console.log("Ucapan:", JSON.stringify(item.wish));
+
                 const nomborDalamFirebase =
                     String(item.phone || "")
                     .replace(/[^0-9]/g, "");
@@ -163,34 +165,39 @@ form.addEventListener("submit", async function(e){
 
 // =========================
 
-onValue(ref(db,"rsvp"),(snapshot)=>{
+onValue(ref(db, "rsvp"), (snapshot) => {
 
-    wishContainer.innerHTML="";
+    wishContainer.innerHTML = "";
 
-    let total=0;
+    let total = 0;
 
-    snapshot.forEach((child)=>{
+    snapshot.forEach((child) => {
 
-        const item=child.val();
+        const item = child.val();
 
-        if(item.status==="Hadir"){
-
-            total+=item.pax;
-
+        if(item.status === "Hadir"){
+            total += Number(item.pax || 0);
         }
 
-        const card=document.createElement("div");
+        const wish = String(item.wish || "").trim();
 
-        card.className="wish-card";
+        // Jangan buat kad jika ucapan kosong
+        if(wish === ""){
+            return;
+        }
 
-        card.innerHTML=`
+        const card = document.createElement("div");
+
+        card.className = "wish-card";
+
+        card.innerHTML = `
 
             <div class="wish-name">
                 🌸 <strong>${item.nama}</strong>
             </div>
 
             <div class="wish-text">
-                "${item.wish}"
+                "${wish}"
             </div>
 
         `;
@@ -199,6 +206,6 @@ onValue(ref(db,"rsvp"),(snapshot)=>{
 
     });
 
-    totalAttendance.textContent=total;
+    totalAttendance.textContent = total;
 
 });
