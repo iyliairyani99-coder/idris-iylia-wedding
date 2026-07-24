@@ -1060,6 +1060,11 @@ HADIAH
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #8B6A46;
+    .title-icon{
+        margin-right:8px;
+        font-size:18px;
+        vertical-align:middle;
+    }
 }
 @media (max-width:768px){
 
