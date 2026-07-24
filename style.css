@@ -1108,9 +1108,107 @@ HADIAH
 
     color:#7B5B3A;
 }
+.family-card{
+    position:relative;
+    display:grid;
+    grid-template-columns:180px 1fr;
+    align-items:center;
+    min-height:280px;
+    margin:35px auto;
+    max-width:900px;
+    padding:25px 35px 25px 15px;
+    background:#fbf7f2;
+    border-radius:28px;
+    overflow:hidden;
+}
 
-.family-title img{
-    width:22px;
-    height:22px;
+.family-avatar{
+    position:relative;
+    align-self:stretch;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.family-avatar img{
+    display:block;
+    width:100%;
+    height:100%;
     object-fit:contain;
+    object-position:center bottom;
+}
+
+.groom-avatar img{
+    transform:scale(1.25);
+    transform-origin:center bottom;
+}
+
+.bride-avatar img{
+    transform:scale(1.08);
+    transform-origin:center bottom;
+}
+
+.family-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:20px 10px;
+}
+
+.family-title{
+    display:block;
+    margin:0 0 28px;
+    color:#7b532b;
+    font-size:30px;
+    font-weight:700;
+    line-height:1.2;
+}
+
+.family-names p{
+    margin:8px 0;
+    color:#303030;
+    font-size:21px;
+    font-weight:700;
+    line-height:1.35;
+}
+
+.family-names span{
+    display:block;
+    margin:5px 0;
+    color:#444;
+    font-size:24px;
+}
+@media (max-width:768px){
+
+    .family-card{
+        grid-template-columns:115px 1fr;
+        min-height:220px;
+        margin:24px 12px;
+        padding:15px 12px 15px 5px;
+        border-radius:24px;
+    }
+
+    .family-title{
+        margin-bottom:20px;
+        font-size:20px;
+    }
+
+    .family-names p{
+        font-size:14px;
+        line-height:1.35;
+    }
+
+    .family-names span{
+        font-size:18px;
+    }
+
+    .groom-avatar img{
+        transform:scale(1.35);
+    }
+
+    .bride-avatar img{
+        transform:scale(1.15);
+    }
+
 }
