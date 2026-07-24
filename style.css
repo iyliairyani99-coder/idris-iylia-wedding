@@ -1047,9 +1047,10 @@ HADIAH
 
 }
 .section-title{
-    margin: 30px 0 15px;
-    font-size: 15px;
+    margin: 28px 0 12px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 2px;
-    font-weight: 600;
+    text-transform: uppercase;
     color: #8B6A46;
 }
