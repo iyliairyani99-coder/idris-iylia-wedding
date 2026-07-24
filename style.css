@@ -451,6 +451,14 @@ h2{
 
     border-radius:50px;
 
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+    
+    gap:10px;
+
 }
 
 /* CONTACT */
