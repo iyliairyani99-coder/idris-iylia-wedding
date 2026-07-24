@@ -1,5 +1,3 @@
-alert("FIREBASE BARU BERJALAN");
-
 // Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
 
@@ -39,7 +37,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
-alert("firebase.js versi baru sedang digunakan");
 
 
 // =========================
