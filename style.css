@@ -282,19 +282,15 @@ h2{
 }
 
 .bismillah{
-
-    font-family: "Amiri Quran", serif;
-
-    font-size:60px;
-
-    color:#7B5B3A;
-
-    margin-bottom:20px;
-
+    font-family: "Katibeh", serif;
+    
+    font-size: 72px;
+    
+    color:#000;
+    
     text-align:center;
-
-    line-height:1.5;
-
+    
+    line-height:1.2;
 }
 
 .salam{
