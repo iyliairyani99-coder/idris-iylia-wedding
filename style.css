@@ -1054,3 +1054,34 @@ HADIAH
     text-transform: uppercase;
     color: #8B6A46;
 }
+@media (max-width:768px){
+
+    #countdown{
+
+        display:grid;
+
+        grid-template-columns:repeat(4,1fr);
+
+        gap:10px;
+
+        max-width:380px;
+
+        margin:40px auto 0;
+
+    }
+
+    #countdown div{
+
+        width:100%;
+
+        padding:15px 10px;
+
+    }
+
+    #countdown h3{
+
+        font-size:28px;
+
+    }
+
+}
