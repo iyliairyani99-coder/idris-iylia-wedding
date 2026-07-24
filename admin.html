@@ -11,6 +11,25 @@
 
 <link rel="stylesheet" href="style.css">
 
+.delete-btn {
+    border: none;
+    background: #b83232;
+    color: white;
+    padding: 8px 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.delete-btn:hover {
+    opacity: 0.85;
+}
+
+.delete-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 <style>
 
 body{
@@ -195,6 +214,8 @@ placeholder="Cari nama atau telefon...">
 <th>Status</th>
 
 <th>Ucapan</th>
+
+<th>Tindakan</th>
 
 </tr>
 

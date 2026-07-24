@@ -4,7 +4,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/fireba
 import {
     getDatabase,
     ref,
-    onValue
+    onValue,
+    remove
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
 
 const firebaseConfig = {
@@ -42,25 +43,55 @@ let semuaData = [];
 
 function paparTable(data){
 
-    tbody.innerHTML="";
+    tbody.innerHTML = "";
 
-    data.forEach(item=>{
+    if(data.length === 0){
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td colspan="6" style="text-align:center;">
+                    Tiada rekod RSVP.
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+    data.forEach(item => {
 
         tbody.innerHTML += `
 
-        <tr>
+            <tr>
 
-            <td>${item.nama}</td>
+                <td>${item.nama || ""}</td>
 
-            <td>${item.phone}</td>
+                <td>${item.phone || ""}</td>
 
-            <td>${item.pax}</td>
+                <td>${item.pax || 0}</td>
 
-            <td>${item.status}</td>
+                <td>${item.status || ""}</td>
 
-            <td>${item.wish}</td>
+                <td>${item.wish || ""}</td>
 
-        </tr>
+                <td>
+
+                    <button
+                        type="button"
+                        class="delete-btn"
+                        data-id="${item.id}"
+                    >
+                        🗑️ Padam
+                    </button>
+
+                </td>
+
+            </tr>
 
         `;
 
@@ -68,25 +99,51 @@ function paparTable(data){
 
 }
 
-onValue(ref(db,"rsvp"),snapshot=>{
+tbody.addEventListener("click", async (e) => {
 
-    semuaData=[];
+    if (!e.target.classList.contains("delete-btn")) return;
 
-    let pax=0;
+    const id = e.target.dataset.id;
 
-    let tidak=0;
+    const item = semuaData.find(x => x.id === id);
 
-    let ucapan=0;
+    if (!confirm(`Padam RSVP "${item.nama}"?`)) return;
 
-    snapshot.forEach(child=>{
+    try {
 
-        const item=child.val();
+        await remove(ref(db, `rsvp/${id}`));
 
-        semuaData.push(item);
+        alert("RSVP berjaya dipadam.");
 
-        if(item.status==="Hadir"){
+    } catch (err) {
 
-            pax += Number(item.pax);
+        console.error(err);
+
+        alert("Gagal memadam RSVP.");
+
+    }
+
+});
+onValue(ref(db, "rsvp"), snapshot => {
+
+    semuaData = [];
+
+    let pax = 0;
+    let tidak = 0;
+    let ucapan = 0;
+
+    snapshot.forEach(child => {
+
+        const item = child.val();
+
+        semuaData.push({
+            id: child.key,
+            ...item
+        });
+
+        if(item.status === "Hadir"){
+
+            pax += Number(item.pax || 0);
 
         }else{
 
@@ -94,7 +151,7 @@ onValue(ref(db,"rsvp"),snapshot=>{
 
         }
 
-        if(item.wish.trim()!=""){
+        if(item.wish && item.wish.trim() !== ""){
 
             ucapan++;
 
@@ -102,13 +159,10 @@ onValue(ref(db,"rsvp"),snapshot=>{
 
     });
 
-    hadirPax.textContent=pax;
-
-    tidakHadir.textContent=tidak;
-
-    jumlahRSVP.textContent=semuaData.length;
-
-    jumlahUcapan.textContent=ucapan;
+    hadirPax.textContent = pax;
+    tidakHadir.textContent = tidak;
+    jumlahRSVP.textContent = semuaData.length;
+    jumlahUcapan.textContent = ucapan;
 
     paparTable(semuaData);
 
