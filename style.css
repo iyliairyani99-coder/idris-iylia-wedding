@@ -1101,42 +1101,23 @@ HADIAH
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:12px;
 
-    font-size:22px;
-    font-weight:600;
-
-    color:#7B5B3A;
-}
-.family-card{
-    position:relative;
-    display:grid;
-    grid-template-columns:180px 1fr;
-    align-items:center;
-    min-height:280px;
-    margin:35px auto;
-    max-width:900px;
-    padding:25px 35px 25px 15px;
-    background:#fbf7f2;
-    border-radius:28px;
-    overflow:hidden;
+    color:#8B5E34;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:28px;
 }
 
-.family-avatar{
-    position:relative;
-    align-self:stretch;
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
-    overflow:hidden;
-}
-
-.family-avatar img{
-    display:block;
-    width:100%;
-    height:100%;
+.family-title img{
+    width:40px;
+    height:40px;
     object-fit:contain;
-    object-position:center bottom;
+    flex-shrink:0;
+}
+
+.family-title span{
+    line-height:1;
 }
 
 .groom-avatar img{
@@ -1181,6 +1162,15 @@ HADIAH
 }
 @media (max-width:768px){
 
+    .family-title{
+        font-size:22px;
+        gap:8px;
+    }
+
+    .family-title img{
+        width:30px;
+        height:30px;
+    }
     .family-card{
         grid-template-columns:115px 1fr;
         min-height:220px;
