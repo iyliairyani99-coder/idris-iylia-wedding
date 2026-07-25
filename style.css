@@ -19,10 +19,6 @@ section{
     padding:90px 20px;
 }
 
-.invitation{
-    padding-top:20px;
-}
-
 h2{
     font-family:'Cormorant Garamond',serif;
     font-size:42px;
@@ -173,8 +169,13 @@ h2{
     display:flex;
     justify-content:center;
     align-items:flex-start;
-    padding-top:20px;
+    padding-top:0px;
     text-align:center;
+}
+
+#home .subtitle{
+    margin-top:25px;
+    margin-bottom:20px;
 }
 
 .hero{
@@ -287,6 +288,10 @@ h2{
 
     box-shadow:0 15px 40px rgba(0,0,0,.08);
 
+}
+
+.invitation{
+    padding-top:20px;
 }
 
 .bismillah{
@@ -692,51 +697,6 @@ h2{
     border-radius:18px;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.cover h1{
-
-font-size:60px;
-
-}
-#home{
-        justify-content:center;
-        align-items:flex-start;
-        padding-top:10px;
-    }
-
-.hero{
-        width:100%;
-        margin:0 auto;
-        text-align:center;
-    }
-
-.hero h2{
-
-font-size:55px;
-
-}
-
-.couple-full{
-
-font-size:48px;
-
-}
-
-.couple-icon{
-    width:200px;
-    margin-bottom:8px;
-}
-
-h2{
-
-font-size:34px;
-
-}
-
-}
 .person{
 
     padding:15px 0;
@@ -1116,6 +1076,23 @@ HADIAH
 /* MOBILE */
 
 @media (max-width:768px){
+
+    #home{
+        justify-content:center;
+        align-items:flex-start;
+        padding-top:10px;
+    }
+
+    #home .subtitle{
+        margin-top:25px;
+        margin-bottom:18px;
+    }
+
+    .hero{
+        width:100%;
+        margin:0 auto;
+        text-align:center;
+    }
 
     .cover h1{
         font-size:60px;
