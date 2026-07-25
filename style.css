@@ -1173,7 +1173,9 @@ HADIAH
         font-size:18px;
     }
 
-    .bride-title{
-        font-size:15px;
+    .family-title.bride-title{
+        font-size:16px !important;
+        white-space:nowrap;
     }
+
 }
