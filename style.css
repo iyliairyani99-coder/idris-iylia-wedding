@@ -686,7 +686,7 @@ h2{
     display:block;
     width:min(90%, 700px);
     margin:35px auto;
-    padding:25px;
+    padding:8px 25px;
     background:#faf6f1;
     border-radius:18px;
 }
@@ -1096,7 +1096,7 @@ HADIAH
 
 .family-title{
     display:block;
-    margin:0 0 28px;
+    margin:0 0 12px;
     color:#7b532b;
     font-size:30px;
     font-weight:700;
@@ -1129,7 +1129,7 @@ HADIAH
         display:block;
         min-height:auto;
         margin:24px 12px;
-        padding:20px 15px;
+        padding:12px 15px;
         border-radius:24px;
     }
 
@@ -1137,6 +1137,7 @@ HADIAH
         margin-bottom:20px;
         padding:10px 20px;
         font-size:20px;
+        margin:0 0 12px;
     }
 
     .family-names p{
