@@ -1072,7 +1072,7 @@ HADIAH
 
 .family-title{
     display:block;
-    margin:0 0 18px;
+    margin:0 0 20px;
     padding:0;
     border:none;
     border-radius:0;
@@ -1157,7 +1157,7 @@ HADIAH
     }
 
     .family-title{
-        margin:0 0 18px;
+        margin:0 0 20px;
         padding:0;
         font-size:20px;
     }
@@ -1173,4 +1173,7 @@ HADIAH
         font-size:18px;
     }
 
+    .bride-title{
+        font-size:18px;
+    }
 }
