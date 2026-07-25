@@ -157,4 +157,18 @@ function copyAccount(account,button){
 
 }
 
+// =======================
+// AUTO PAUSE MUSIC
+// =======================
+
+document.addEventListener("visibilitychange", () => {
+
+    if (document.hidden) {
+        music.pause();
+    } else {
+        music.play().catch(() => {});
+    }
+
+});
+
 
