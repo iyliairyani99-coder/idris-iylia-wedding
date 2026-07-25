@@ -358,6 +358,13 @@ h2{
 
 }
 
+.couple-icon{
+    display:block;
+    width:120px;
+    height:auto;
+    margin:0 auto 8px;
+}
+
 .event-date,
 .event-time,
 .venue{
@@ -726,6 +733,11 @@ font-size:55px;
 
 font-size:48px;
 
+}
+
+.couple-icon{
+    width:90px;
+    margin-bottom:8px;
 }
 
 h2{
@@ -1104,14 +1116,6 @@ HADIAH
     padding:20px 10px;
 }
 
-.family-icon{
-    display:block;
-    width:120px;
-    height:120px;
-    object-fit:contain;
-    margin:0 auto 14px;
-}
-
 .family-title{
     display:block;
     margin:0 0 28px;
@@ -1137,12 +1141,6 @@ HADIAH
 }
 
 @media (max-width:768px){
-
-    .family-icon{
-        width:100px;
-        height:100px;
-        margin-bottom:12px;
-    }
 
     .family-card{
         display:block;
