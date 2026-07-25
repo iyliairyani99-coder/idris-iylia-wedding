@@ -310,36 +310,6 @@ h2{
 
 }
 
-.parent-box{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:25px;
-
-    margin:35px 0;
-
-}
-
-.family{
-
-    background:#faf6f1;
-
-    padding:25px;
-
-    border-radius:18px;
-
-}
-
-.family h3{
-
-    color:#7B5B3A;
-
-    margin-bottom:15px;
-
-}
-
 .invite-text{
 
     margin:35px 0;
@@ -712,6 +682,14 @@ h2{
     }
 
 }
+.family-card{
+    display:block;
+    width:min(90%, 700px);
+    margin:35px auto;
+    padding:25px;
+    background:#faf6f1;
+    border-radius:18px;
+}
 
 /* MOBILE */
 
@@ -736,7 +714,7 @@ font-size:48px;
 }
 
 .couple-icon{
-    width:120px;
+    width:200px;
     margin-bottom:8px;
 }
 
@@ -1117,12 +1095,17 @@ HADIAH
 }
 
 .family-title{
-    display:block;
+    display:inline-block;
     margin:0 0 28px;
+    padding:12px 28px;
+    background:#ffffff;
+    border:2px solid #e7d2b2;
+    border-radius:50px;
     color:#7b532b;
     font-size:30px;
     font-weight:700;
     line-height:1.2;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 .family-names p{
@@ -1152,6 +1135,7 @@ HADIAH
 
     .family-title{
         margin-bottom:20px;
+        padding:10px 20px;
         font-size:20px;
     }
 
