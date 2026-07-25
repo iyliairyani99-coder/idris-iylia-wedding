@@ -1110,8 +1110,8 @@ HADIAH
 }
 
 .family-title img{
-    width:40px;
-    height:40px;
+    width:60px;
+    height:60px;
     object-fit:contain;
     flex-shrink:0;
 }
@@ -1168,8 +1168,10 @@ HADIAH
     }
 
     .family-title img{
-        width:30px;
-        height:30px;
+        width:100px;
+        height:100px;
+        object-fit:contain;
+        flex-shrink:0;
     }
     .family-card{
         grid-template-columns:115px 1fr;

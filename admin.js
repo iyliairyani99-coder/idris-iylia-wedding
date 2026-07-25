@@ -124,6 +124,7 @@ tbody.addEventListener("click", async (e) => {
     }
 
 });
+
 onValue(ref(db, "rsvp"), snapshot => {
 
     semuaData = [];
