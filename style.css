@@ -1178,7 +1178,7 @@ HADIAH
 
     display:block;
 
-    width:95%;
+    width:100%;
 
     max: width 380px;
 
@@ -1186,4 +1186,12 @@ HADIAH
 
     margin:0 auto 8px;
 
+}
+@media (max-width: 600px) {
+    .family-title-img {
+        width: 108%;
+        max-width: none;
+        height: auto;
+        margin: 0 -4% 6px;
+    }
 }
