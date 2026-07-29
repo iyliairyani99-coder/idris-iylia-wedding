@@ -1195,3 +1195,16 @@ HADIAH
         margin: 0 -4% 6px;
     }
 }
+.nav-icon{
+
+    width:26px;
+
+    height:26px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto 6px;
+
+}
