@@ -1180,10 +1180,10 @@ HADIAH
 
     width:100%;
 
-    max-width:360px;
+    max: width 380px;
 
     height:auto;
 
-    margin:0 auto 20px;
+    margin:0 auto 8px;
 
 }
