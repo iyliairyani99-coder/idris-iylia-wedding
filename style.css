@@ -1174,3 +1174,16 @@ HADIAH
     }
 
 }
+.family-title-img{
+
+    display:block;
+
+    width:100%;
+
+    max-width:360px;
+
+    height:auto;
+
+    margin:0 auto 20px;
+
+}
