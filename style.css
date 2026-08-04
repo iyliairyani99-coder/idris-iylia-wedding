@@ -1120,3 +1120,39 @@ transform:translateY(0);
     transform: translateY(-3px);
 
 }
+.attendance-count{
+    margin-top:40px;
+    text-align:center;
+}
+
+.attendance-count h3{
+    margin-bottom:15px;
+}
+
+#totalAttendance{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:90px;
+    height:90px;
+
+    margin:0 auto;
+
+    background:#faf6f1;
+    border-radius:22px;
+
+    color:#7B5B3A;
+    font-size:42px;
+    font-weight:700;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.wish-list{
+    margin-top:45px;
+}
+
+.wish-list h3{
+    margin-bottom:25px;
+}
